@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+ALIGNMENT = "Center"
 FONT = ("Courier", 24, "normal")
 
 Screen().tracer(0)
@@ -18,6 +19,10 @@ class Scoreboard(Turtle):
         self.write(arg=f"Score = {self.score}", align="center", font=FONT)
 
     def safely_across(self):
+        self.clear()
         self.score += 1
         self.update_scoreboard()
 
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME OVER", False, ALIGNMENT, FONT)

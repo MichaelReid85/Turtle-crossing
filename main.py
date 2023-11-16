@@ -5,10 +5,6 @@ from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
 
-# TODO - Get turtle to cross
-# TODO - Keep score
-# TODO - Make cars cross randomly
-
 
 player = Player()
 scoreboard = Scoreboard()
@@ -21,6 +17,8 @@ screen.title("Turtle Crossing!")
 
 screen.listen()
 screen.onkeypress(player.move_up, "Up")
+screen.onkeypress(player.move_left, "Left")
+screen.onkeypress(player.move_right, "Right")
 
 
 game_is_on = True
@@ -33,7 +31,11 @@ while game_is_on:
         player.scored()
         scoreboard.clear()
         scoreboard.safely_across()
-        car_manager.increase_speed()
+        car_manager.player_scored()
+
+    elif player.distance(car_manager) < 25:
+        game_is_on = False
+        scoreboard.game_over()
 
 
 
