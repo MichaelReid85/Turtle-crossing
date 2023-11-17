@@ -12,11 +12,15 @@ class Player(Turtle):
         self.shape("turtle")
         self.color("black")
         self.penup()
-        self.left(90)
+        self.setheading(90)
         self.goto(STARTING_POSITION)
 
     def move_up(self):
         new_y = self.ycor() + MOVE_DISTANCE
+        self.goto(self.xcor(), new_y)
+
+    def move_back(self):
+        new_y = self.ycor() - MOVE_DISTANCE
         self.goto(self.xcor(), new_y)
 
     def move_left(self):
@@ -30,5 +34,5 @@ class Player(Turtle):
     def scored(self):
         self.reset()
         self.penup()
-        self.left(90)
+        self.setheading(90)
         self.goto(STARTING_POSITION)
