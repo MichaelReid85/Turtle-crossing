@@ -25,17 +25,19 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    car_manager.move_car()
+    # car_manager.move_car()
+    car_manager.create_car()
+    car_manager.move_cars()
 
     if player.ycor() > 250:
         player.scored()
         scoreboard.clear()
         scoreboard.safely_across()
-        car_manager.player_scored()
+        # car_manager.player_scored()
 
-    elif player.distance(car_manager) < 25:
-        game_is_on = False
-        scoreboard.game_over()
+    # elif player.distance(car_manager) < 25:
+    #     game_is_on = False
+    #     scoreboard.game_over()
 
 
 
