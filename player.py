@@ -31,6 +31,7 @@ class Player(Turtle):
         new_x = self.xcor() + MOVE_DISTANCE
         self.goto(new_x, self.ycor())
 
+    # Properties after scoring
     def scored(self):
         self.reset()
         self.penup()

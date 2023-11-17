@@ -31,6 +31,7 @@ while game_is_on:
     car_manager.create_car()
     car_manager.move_cars()
 
+    # Player successfully crossed
     if player.ycor() > 250:
         player.scored()
         car_manager.level_up()
@@ -38,6 +39,7 @@ while game_is_on:
         scoreboard.safely_across()
         # car_manager.player_scored()
 
+    # Player got hit/game over
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
