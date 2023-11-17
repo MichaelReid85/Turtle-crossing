@@ -11,6 +11,7 @@ scoreboard = Scoreboard()
 car_manager = CarManager()
 
 screen = Screen()
+screen.bgcolor("snow2")
 screen.setup(width=600, height=600)
 screen.tracer(0)
 screen.title("Turtle Crossing!")
