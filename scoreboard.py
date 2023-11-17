@@ -16,7 +16,7 @@ class Scoreboard(Turtle):
 
     def update_scoreboard(self):
         self.goto(-200, 250)
-        self.write(arg=f"Score = {self.score}", align="center", font=FONT)
+        self.write(arg=f"Level = {self.score}", align="center", font=FONT)
 
     def safely_across(self):
         self.clear()
@@ -24,5 +24,6 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
 
     def game_over(self):
+        self.clear()
         self.goto(0, 0)
         self.write(f"    GAME OVER\nYou're score is {self.score}", False, ALIGNMENT, FONT)
